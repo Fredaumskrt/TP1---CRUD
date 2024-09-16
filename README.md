@@ -4,7 +4,7 @@ Este projeto implementa um CRUD genérico com um índice direto utilizando uma t
 
 Classes criadas: 
 
-Classe Arquivo<T extends registro>
+- Classe Arquivo <T extends registro>
 
 Função: Gerencia a manipulação de registros em um arquivo, incluindo operações de inclusão, leitura, atualização e exclusão.
 Métodos Principais:
@@ -13,14 +13,15 @@ read(int id): Busca o registro usando o índice direto e retorna os dados do reg
 update(T objeto): Atualiza um registro existente, realocando se necessário, para tratar alterações no tamanho do registro.
 delete(int id): Marca o registro como excluído no arquivo e remove a entrada correspondente do índice.
 
-Interface registro
+- Interface registro
 Função: Define os métodos que as classes de registros devem implementar para serem usadas com o CRUD.
 Métodos:
 getID(): Retorna o ID do registro.
 setID(int id): Define o ID do registro.
 toByteArray(): Converte o registro para um array de bytes para ser salvo no arquivo.
 fromByteArray(byte[] ba): Reconstrói o registro a partir de um array de bytes lido do arquivo.
-Classe ParEmailID
+
+- Classe ParEmailID
 
 Função: Representa um par chave-valor para o índice (email e ID) usado na tabela hash extensível.
 Métodos:
@@ -28,7 +29,8 @@ hashCode(): Calcula o código hash do email.
 size(): Retorna o tamanho do registro.
 toByteArray(): Serializa o registro para um array de bytes.
 fromByteArray(byte[] ba): Deserializa o registro a partir de um array de bytes.
-Classe HashExtensivel<T extends RegistroHashExtensivel<T>>
+ 
+- Classe HashExtensivel<T extends RegistroHashExtensivel<T>>
 
 Função: Implementa a tabela hash extensível, que é usada como um índice direto para os registros.
 Métodos:
