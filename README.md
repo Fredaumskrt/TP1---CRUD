@@ -2,6 +2,42 @@
 
 Este projeto implementa um CRUD genérico com um índice direto utilizando uma tabela hash extensível.
 
+Classes criadas: 
+
+Classe Arquivo<T extends registro>
+
+Função: Gerencia a manipulação de registros em um arquivo, incluindo operações de inclusão, leitura, atualização e exclusão.
+Métodos Principais:
+create(T objeto): Insere um novo registro no fim do arquivo e atualiza o índice com o novo ID e a posição do registro.
+read(int id): Busca o registro usando o índice direto e retorna os dados do registro.
+update(T objeto): Atualiza um registro existente, realocando se necessário, para tratar alterações no tamanho do registro.
+delete(int id): Marca o registro como excluído no arquivo e remove a entrada correspondente do índice.
+
+Interface registro
+Função: Define os métodos que as classes de registros devem implementar para serem usadas com o CRUD.
+Métodos:
+getID(): Retorna o ID do registro.
+setID(int id): Define o ID do registro.
+toByteArray(): Converte o registro para um array de bytes para ser salvo no arquivo.
+fromByteArray(byte[] ba): Reconstrói o registro a partir de um array de bytes lido do arquivo.
+Classe ParEmailID
+
+Função: Representa um par chave-valor para o índice (email e ID) usado na tabela hash extensível.
+Métodos:
+hashCode(): Calcula o código hash do email.
+size(): Retorna o tamanho do registro.
+toByteArray(): Serializa o registro para um array de bytes.
+fromByteArray(byte[] ba): Deserializa o registro a partir de um array de bytes.
+Classe HashExtensivel<T extends RegistroHashExtensivel<T>>
+
+Função: Implementa a tabela hash extensível, que é usada como um índice direto para os registros.
+Métodos:
+create(T elemento): Adiciona um novo elemento na tabela hash.
+read(int chave): Lê um elemento da tabela hash usando a chave.
+update(T elemento): Atualiza um elemento existente na tabela hash.
+delete(int chave): Remove um elemento da tabela hash.
+
+
 - O trabalho possui um índice direto implementado com a tabela hash extensível?
 
 
