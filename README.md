@@ -3,8 +3,7 @@
 Este projeto implementa um CRUD genérico com um índice direto utilizando uma tabela hash extensível.
 
 - O trabalho possui um índice direto implementado com a tabela hash extensível?
-
- R: Sim, o trabalho implementa um índice direto utilizando a tabela hash extensível. A classe HashExtensivel é usada para gerenciar os índices, com a classe ParIDPosicao armazenando o par ID e a posição do registro no arquivo.
+R: Sim, o trabalho implementa um índice direto utilizando a tabela hash extensível. A classe HashExtensivel é usada para gerenciar os índices, com a classe ParIDPosicao armazenando o par ID e a posição do registro no arquivo.
 
 - A operação de inclusão insere um novo registro no fim do arquivo e no índice e retorna o ID desse registro? R: Sim, a operação de inclusão insere um novo registro no fim do arquivo e atualiza o índice hash extensível com o novo ID e a posição do registro no arquivo. O ID é incrementado e retornado após a inclusão.
 
