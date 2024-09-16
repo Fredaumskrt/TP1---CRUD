@@ -32,4 +32,6 @@ R: Com base nos testes realizados, o trabalho está funcionando parcilamente (95
 
 R: Sim está completo
 
--O trabalho é original e não a cópia de um trabalho de outro grupo? R: O trabalho foi feito por mim e com algumas dúvidas tiradas pelo gpt com alguns códigos do professor Marcos Kutova, que nos forneceu. Trabalho original!!!
+-O trabalho é original e não a cópia de um trabalho de outro grupo? 
+
+R: O trabalho foi feito por mim e com algumas dúvidas tiradas pelo gpt com alguns códigos do professor Marcos Kutova, que nos forneceu. Trabalho original!!!
