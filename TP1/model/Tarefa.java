@@ -1,5 +1,7 @@
+package model;
 import java.io.*;
 import java.util.Date;
+
 
 public class Tarefa implements registro {
     private int id;
@@ -8,18 +10,20 @@ public class Tarefa implements registro {
     private Date dataConclusao;
     private String status;
     private int prioridade;
+    private int idCategoria; // Chave estrangeira para a categoria
 
     // Construtor
-    public Tarefa(int id, String nome, Date dataCriacao, Date dataConclusao, String status, int prioridade) {
+    public Tarefa(int id, String nome, Date dataCriacao, Date dataConclusao, String status, int prioridade, int idCategoria) {
         this.id = id;
         this.nome = nome;
         this.dataCriacao = dataCriacao;
         this.dataConclusao = dataConclusao;
         this.status = status;
         this.prioridade = prioridade;
+        this.idCategoria = idCategoria; // Inicializa a chave estrangeira
     }
 
-    
+    // Getters e Setters
     @Override
     public int getID() {
         return id;
@@ -70,7 +74,15 @@ public class Tarefa implements registro {
         this.prioridade = prioridade;
     }
 
-    
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    // Serialização para byte array
     @Override
     public byte[] toByteArray() throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -81,10 +93,12 @@ public class Tarefa implements registro {
         dos.writeLong(dataConclusao.getTime());
         dos.writeUTF(status);
         dos.writeInt(prioridade);
+        dos.writeInt(idCategoria); // Serializa o idCategoria
         dos.flush();
         return baos.toByteArray();
     }
 
+    // Deserialização de byte array
     @Override
     public void fromByteArray(byte[] ba) throws IOException {
         ByteArrayInputStream bais = new ByteArrayInputStream(ba);
@@ -95,5 +109,6 @@ public class Tarefa implements registro {
         dataConclusao = new Date(dis.readLong());
         status = dis.readUTF();
         prioridade = dis.readInt();
+        idCategoria = dis.readInt(); // Deserializa o idCategoria
     }
 }

@@ -15,13 +15,15 @@ Implementado pelo Prof. Marcos Kutova
 v1.1 - 2021
 */
 
+
+
 import java.util.Scanner;
 import java.io.File;
-import aed3.HashExtensivel;
+import storage.aed3.HashExtensivel;
+import storage.aed3.ParEmailID;  // Certifique-se de que está importando a classe corretamente
 
 public class Main {
 
-  // Método principal apenas para testes
   public static void main(String[] args) {
 
     HashExtensivel<ParEmailID> he;
@@ -30,8 +32,9 @@ public class Main {
 
     try {
       File d = new File("dados");
-      if (!d.exists())
-        d.mkdir();
+      if (!d.exists()) {
+        d.mkdir();  // Certifique-se de que o diretório está sendo criado corretamente
+      }
       he = new HashExtensivel<>(ParEmailID.class.getConstructor(), 4, "dados/" + nomeArquivo + ".hash_d.db",
           "dados/" + nomeArquivo + ".hash_c.db");
 
